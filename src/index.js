@@ -61,16 +61,14 @@ class Masonry extends Component {
 
   componentDidMount() {
     const container = this.gridRef;
-    
+
     this.gridFilledBoundary = initArray(container.offsetWidth);
-    
-    setTimeout(() => {
-      const children = container.children;
-      for (let child of children) {
-        child.classList.add('grid-item');
-        // this._addChild(child);
-      }
-    }, 2000)
+
+    const children = container.children;
+    for (let child of children) {
+      child.style.position = 'absolute';
+      this._addChild(child);
+    }
   }
 
   /**
@@ -123,11 +121,8 @@ class Masonry extends Component {
   }
 
   _placeElement(element, position) {
-    element.style = `
-      top: ${position.y}px;
-      left: ${position.x}px;
-      position: absolute;
-    `;
+    element.style.top = `${position.y}px`;
+    element.style.left = `${position.x}px`;
   }
 
   /**
@@ -151,17 +146,24 @@ class Masonry extends Component {
         ref={node => {
           this.gridRef = node;
         }}
-
-        style={{
-          position: 'relative',
-        }}
+        style={{ position: 'relative' }}
       >
-        {Array(4)
-          .fill(0)
-          .map(getRandomDiv)}
+        {this.props.children}
       </div>
     );
   }
 }
 
-export default Masonry;
+class Usage extends Component {
+  render() {
+    return (
+      <Masonry>
+        {Array(14)
+          .fill(0)
+          .map(getRandomDiv)}
+      </Masonry>
+    );
+  }
+}
+
+export default Usage;
