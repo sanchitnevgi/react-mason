@@ -1,7 +1,7 @@
 {
-  "name": "react-masonry",
+  "name": "react-mason",
   "version": "1.0.0",
-  "description": "react-masonry React component",
+  "description": "React masonry component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": ["css", "es", "lib", "umd"],
@@ -23,8 +23,8 @@
     "react-dom": "^16.2.0"
   },
   "author": "Sanchit Nevgi <sanchit.nevgi@gmail.com>",
-  "homepage": "",
+  "homepage": "https://github.com/sanchitgn/react-mason",
   "license": "MIT",
-  "repository": "https://github.com/sanchitgn/react-masonry",
+  "repository": "https://github.com/sanchitgn/react-mason",
   "keywords": ["react-component"]
 }

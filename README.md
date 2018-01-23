@@ -1,14 +1,14 @@
-# react-masonry
+# react-mason
 
 ![Masonry usage][header-logo]
 
 [header-logo]: masonry.png
 
-> react-masonry is a masonry-grid component.
+> react-mason is a masonry-grid component.
 
 ## Installation
 
-`npm install react-masonry`
+`npm install react-mason`
 
 ## Usage
 
@@ -16,7 +16,7 @@ Pass children to the `Masonry` component
 
 ```js
 import React, { Component } from 'react';
-import Masonry from 'react-masonry';
+import Masonry from 'react-mason';
 import Photo from './Photo';
 
 class PhotoAlbum extends Component {
