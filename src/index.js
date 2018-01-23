@@ -1,47 +1,5 @@
 import React, { Component } from 'react';
 
-/******* Setup ********/
-
-const GRAYS = [
-  '#9FA8DA',
-  '#7986CB',
-  '#5C6BC0',
-  '#3F51B5',
-  '#3949AB',
-  '#303F9F',
-  '#283593',
-  '#1A237E',
-];
-
-const SIZES = [200, 100];
-
-const serial = array => {
-  let i = 0;
-  return () => {
-    i = (i + 1) % array.length;
-    return array[i];
-  };
-};
-
-const randomSize = () => SIZES[Math.floor(Math.random() * SIZES.length)];
-
-const serialGrays = serial(GRAYS);
-
-const getRandomDiv = (el, i) => {
-  return (
-    <div
-      key={i}
-      style={{
-        height: randomSize(),
-        width: randomSize(),
-        background: `${serialGrays()}`,
-      }}
-    />
-  );
-};
-
-/******* End Setup ********/
-
 function initArray(size) {
   return Array(size).fill(0);
 }
@@ -166,16 +124,4 @@ class Masonry extends Component {
   }
 }
 
-class Usage extends Component {
-  render() {
-    return (
-      <Masonry>
-        {Array(14)
-          .fill(0)
-          .map(getRandomDiv)}
-      </Masonry>
-    );
-  }
-}
-
-export default Usage;
+export default Masonry;
