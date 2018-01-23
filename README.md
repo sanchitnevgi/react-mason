@@ -1,16 +1,33 @@
 # react-masonry
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+![Masonry usage][header-logo]
 
-Describe react-masonry here.
+[header-logo]: masonry.png
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+> react-masonry is a masonry-grid component.
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+## Installation
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+`npm install react-masonry`
+
+## Usage
+
+Pass children to the `Masonry` component
+
+```js
+import React, { Component } from 'react';
+import Masonry from 'react-masonry';
+import Photo from './Photo';
+
+class PhotoAlbum extends Component {
+  render() {
+    return (
+      <Masonry>
+        {
+          this.props.photos.map(photo => <Photo {...photo} />)
+        }
+      </Masonry>
+    )
+  }
+}
+```
