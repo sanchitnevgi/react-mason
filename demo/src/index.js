@@ -49,7 +49,7 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <h1>react-masonry</h1>
+        <h1 className="heading">React Masonry</h1>
         <Masonry>
           {Array(20)
             .fill(0)

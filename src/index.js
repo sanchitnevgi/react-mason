@@ -108,6 +108,10 @@ class Masonry extends Component {
   }
 
   _layout() {
+    if (!this.gridRef) {
+      return;
+    }
+
     this.gridFilledBoundary = initArray(this.gridRef.offsetWidth);
 
     const children = this.gridRef.children;
