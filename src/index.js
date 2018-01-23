@@ -15,16 +15,16 @@ class Masonry extends Component {
     this._canFit = this._canFit.bind(this);
     this._updateGridBoundary = this._updateGridBoundary.bind(this);
     this._placeElement = this._placeElement.bind(this);
-    this._render = this._render.bind(this);
+    this._layout = this._layout.bind(this);
   }
 
   componentDidMount() {
-    this._render();
-    window.addEventListener('resize', this._render);
+    this._layout();
+    window.addEventListener('resize', this._layout);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this._render);
+    window.removeEventListener('resize', this._layout);
   }
 
   /**
@@ -99,7 +99,7 @@ class Masonry extends Component {
     }
   }
 
-  _render() {
+  _layout() {
     this.gridFilledBoundary = initArray(this.gridRef.offsetWidth);
 
     const children = this.gridRef.children;
