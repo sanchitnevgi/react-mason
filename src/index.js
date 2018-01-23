@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 function initArray(size) {
   return Array(size).fill(0);
 }
 
 class Masonry extends Component {
+  static propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
+    ]),
+  };
+
   gridRef = null;
   gridFilledBoundary = [];
 
