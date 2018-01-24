@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-
+import './index.css';
 import Masonry from '../../src';
 
 /******* Setup ********/
 
-const GRAYS = [
-  '#9FA8DA',
-  '#7986CB',
-  '#5C6BC0',
-  '#3F51B5',
-  '#3949AB',
+const COLORS = [
+  '#D32F2F',
+  '#C2185B',
+  '#7B1FA2',
+  '#512DA8',
   '#303F9F',
-  '#283593',
-  '#1A237E',
+  '#1976D2',
+  '#0288D1',
+  '#0097A7',
+  '#00796B',
+  '#388E3C',
+  '#689F38',
+  '#A4B42B',
+  '#FBC02D',
+  '#FFA000',
+  '#F57C00',
+  '#E64A19',
+  '#5D4037',
+  '#616161',
+  '#455A64',
 ];
 
 const SIZES = [200, 100];
@@ -28,7 +39,7 @@ const serial = array => {
 
 const randomSize = () => SIZES[Math.floor(Math.random() * SIZES.length)];
 
-const serialGrays = serial(GRAYS);
+const serialGrays = serial(COLORS);
 
 const getRandomDiv = (el, i) => {
   return (
@@ -49,9 +60,13 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <h1 className="heading">React Masonry</h1>
+        <div className='center'>
+        <h1 className='heading'>React Mason</h1>
+          <h2 className='sub-heading'>Variable width/height layout library</h2>
+        </div>  
+        <div className='overlay'></div>
         <Masonry>
-          {Array(20)
+          {Array(100)
             .fill(0)
             .map(getRandomDiv)}
         </Masonry>

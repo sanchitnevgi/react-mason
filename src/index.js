@@ -125,6 +125,7 @@ class Masonry extends Component {
   render() {
     return (
       <div
+        className='masonry-grid'  
         ref={node => {
           this.gridRef = node;
         }}
