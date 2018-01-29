@@ -5,24 +5,15 @@
 
 body {
   overflow: hidden;
+  background: linear-gradient(to left, #11998e, #38ef7d);
+  height: 100vh;
+  width: 100vw;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 2;
+.heading-container {
+  padding: 12px;
+  margin-bottom: 56px;
+  margin-top: 24px;
 }
 
 .heading, .sub-heading {
@@ -30,7 +21,6 @@ body {
   color: #FFF;
   font-weight: 200;
   font-family: sans-serif;
-  text-shadow: 2px 2px #000000;
 }
 
 .heading {
@@ -43,6 +33,37 @@ body {
   white-space: nowrap;
 }
 
-.masonry-grid {
-  width: calc(100vw + 200px);
+.text-green {
+  color: #11998e;
+}
+
+.demo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo-container .demo-source, .demo-container .demo-result {
+  flex-basis: 45%;
+}
+
+.demo-source img {
+  width: 100%;
+}
+
+.demo-result {
+  overflow: hidden;
+  height: 420px;
+}
+
+@media (max-width: 800px) {
+  .demo-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demo-container .demo-source, .demo-container .demo-result {
+    width: 100%;
+  }
 }

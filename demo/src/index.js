@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './index.css';
+import demoImg from './masonry-demo.png';
 import Masonry from '../../src';
 
 /******* Setup ********/
@@ -60,16 +61,22 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <div className='center'>
-        <h1 className='heading'>React Mason</h1>
-          <h2 className='sub-heading'>Variable width/height layout library</h2>
+        <div className='heading-container'>
+          <h1 className='heading'>React Mason</h1>
+          <h2 className='sub-heading'>Masonry for variable <span className='text-green'>width</span> | <span className='text-green'>height</span> elements</h2>
+        </div>
+        <div className='demo-container'>
+          <div className='demo-source'>  
+            <img src={demoImg} />
+          </div>  
+          <div className='demo-result'>
+            <Masonry>
+              {
+                Array(20).fill(0).map(getRandomDiv)
+              }
+            </Masonry>
+          </div>
         </div>  
-        <div className='overlay'></div>
-        <Masonry>
-          {Array(100)
-            .fill(0)
-            .map(getRandomDiv)}
-        </Masonry>
       </div>
     );
   }
