@@ -1,0 +1,8 @@
+.masonry-grid {
+  position: relative;
+}
+
+.masonry-grid .grid-item {
+  position: absolute;
+  transition: top 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}

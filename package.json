@@ -1,6 +1,6 @@
 {
   "name": "react-mason",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React masonry component",
   "main": "lib/index.js",
   "module": "es/index.js",

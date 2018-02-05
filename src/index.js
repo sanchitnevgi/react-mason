@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './masonry.css';
 
 function initArray(size) {
   return Array(size).fill(0);
@@ -87,9 +88,6 @@ class Masonry extends Component {
   _placeElement(element, position) {
     element.style.top = `${position.y}px`;
     element.style.left = `${position.x}px`;
-
-    const timing = '400ms cubic-bezier(0.455, 0.03, 0.515, 0.955)';
-    element.style.transition = `top ${timing}, left ${timing}`;
   }
 
   /**
@@ -121,7 +119,6 @@ class Masonry extends Component {
     const children = this.gridRef.children;
 
     for (let child of children) {
-      child.style.position = 'absolute';
       this._addChild(child);
     }
   }
@@ -129,12 +126,13 @@ class Masonry extends Component {
   render() {
     return (
       <div
-        className="masonry-grid"
+        className='masonry-grid'
         ref={node => {
           this.gridRef = node;
-        }}
-        style={{ position: 'relative' }}>
-        {this.props.children}
+        }}>
+        {React.Children.map(this.props.children, child => (
+          <div className='grid-item'>{child}</div>
+        ))}
       </div>
     );
   }
