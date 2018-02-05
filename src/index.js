@@ -107,6 +107,10 @@ class Masonry extends Component {
     }
   }
 
+  componentDidUpdate() {
+    this._layout();
+  }
+
   _layout() {
     if (!this.gridRef) {
       return;
@@ -125,12 +129,11 @@ class Masonry extends Component {
   render() {
     return (
       <div
-        className='masonry-grid'  
+        className="masonry-grid"
         ref={node => {
           this.gridRef = node;
         }}
-        style={{ position: 'relative' }}
-      >
+        style={{ position: 'relative' }}>
         {this.props.children}
       </div>
     );
