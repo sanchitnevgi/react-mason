@@ -65,7 +65,9 @@ class Masonry extends Component {
     }
 
     this._updateGridBoundary(element, optimalPosition);
-    this._placeElement(element, optimalPosition);
+    requestAnimationFrame(() => {
+      this._placeElement(element, optimalPosition);
+    })
   }
 
   /**
